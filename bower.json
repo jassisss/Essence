@@ -1,0 +1,36 @@
+{
+  "name": "essence",
+  "authors": [
+    "Jose de Assis <jassis@cgctec.com.br>"
+  ],
+  "description": "Aplicativo para verificar perfis e comportamentos profissionais",
+  "main": "index.html",
+  "keywords": [
+    "essência",
+    "comportamento",
+    "DISC",
+    "perfil",
+    "essence",
+    "profile"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jassisss/Essence",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.7.3",
+    "angular-route": "1.7.3",
+    "angular-messages": "1.7.3",
+    "angular-material": "1.1.10",
+    "bootstrap": "~4.1.3",
+    "jquery": "~3.3.1",
+    "popper.js": "~1.14.3",
+    "Font-Awesome": "~5.3.1"
+  }
+}
