@@ -1,0 +1,43 @@
+<md-dialog aria-label="Login Modal" class="bordered">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h5>Login</h5>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="close" class="s12" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+      <div class="clear-div">
+        <div layout="row">
+          <md-input-container class="bordered app-input-container">
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+          </md-input-container>
+        </div>
+
+        <div layout="row">
+          <md-input-container class="bordered app-input-container">
+            <label>Senha</label>
+            <input ng-model="user.password" type="password">
+          </md-input-container>
+        </div>
+      </div>
+    </md-content>
+
+    <md-toolbar md-theme="docs-dark" class="md-accent nav-bar" layout-align="center center">
+        <div class="md-toolbar-tools">
+          <md-dialog-actions layout="row">
+            <md-button ng-click="answer('useful')" class="bordered">
+              Login
+            </md-button>
+          </md-dialog-actions>
+        </div>
+    </md-toolbar>
+
+
+  </form>
+</md-dialog>
