@@ -16,27 +16,24 @@
 	<link rel="stylesheet" href="assets/styles/material.css">
 	<style>
 	    body{
-	        background: url('assets/img/overlays/i05.png'), url('assets/img/jpg/bg_night02.jpg');
-	        background-repeat: repeat, no-repeat;
-	        background-size: auto, cover;
+	        background: url('assets/img/overlays/i05.png');
+	        background-repeat: repeat;
 	        background-color: #4E4E50;
 	        color: #fff;
 	    }
 	</style>
 </head>
 <body>
-	<div ng-controller="appCtrl" layout="column" ng-cloak>
-	  <md-toolbar class="bg-transparent glyphicon-text-color">
+	<div layout="column" ng-cloak>
+	  <md-toolbar class="md-primary">
 	  	  <div class="md-toolbar-tools">
 	  	    <md-button class="md-icon-button" aria-label="Settings">
 	  	      <md-icon md-svg-icon="logo2"></md-icon>
 	  	    </md-button>
 
 	  	    <h2 flex md-truncate>ESSENCE</h2>
+	  	    <h3 flex md-truncate>Área Administrador</h3>
 
-	  	    <md-button aria-label="Login" ng-click="showLoginDialog($event)">
-	  	      <span>Login&nbsp;<md-icon md-svg-icon="assets/img/svg/solid/sign-in-alt.svg" class="s12"></md-icon></span>
-	  	    </md-button>
 	  	  </div>
 	  </md-toolbar>
 	  	<br>

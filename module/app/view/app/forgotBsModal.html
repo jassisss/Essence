@@ -1,0 +1,22 @@
+<md-dialog class="jumbotron bordered login-modal" aria-label="Forgot Modal" ng-controller="forgotCtrl">
+	<h3 class="form-title">{{forgotNomeCtrl}}</h3>
+
+    <md-divider></md-divider>
+
+	<form name="forgotForm">
+		<h6 class="valSenhaTxt">Será enviado um e-mail para o endereço abaixo para validação da senha.</h6>
+		<br />
+		<md-input-container class="md-block ">
+			<label>E-Mail</label>
+			<input ng-model="forgot.email" type="email" name="forgotEmail"  ng-required="true">
+			<div class="forgot" ng-messages="forgotForm.forgotEmail.$error" ng-if="forgotForm.forgotEmail.$dirty">
+				<p ng-message="required">E-mail é um campo obrigatório!</p>
+				<p ng-message="email">O e-mail é inválido!</p>
+			</div>
+		</md-input-container>
+
+	</form>
+	
+	<button class="btn btn-primary btn-block form-control" ng-disabled="forgotForm.$invalid">Enviar</button>
+
+</md-dialog>

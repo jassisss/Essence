@@ -1,7 +1,9 @@
 (function() {
     'use strict';
 
-	app.controller('registerCtrl', function ($scope, $location, idGenerator, users, usersApi) {
+	app.controller('registerCtrl', ['$scope', '$location', 'idGenerator', '$http', 'usersApi', '$mdDialog',
+		
+		function ($scope, $location, idGenerator, $http, usersApi, $mdDialog) {
 
 		$scope.registerNomeCtrl = "Formulário de Registro";
 
@@ -14,10 +16,18 @@
 		};
 
 
-		$scope.users = users.data;
+		$scope.users = [];
 		$scope.confirmPassword = '';
 		$scope.userExit = false;
 		$scope.emailExist = '';
+		
+		var loadUsers = function () {
+			$http.get("http://localhost:3412/users").then(function onSuccess(response) {
+				$scope.users = response.data;
+			}).catch(function onError(response) {
+				$scope.message = "Aconteceu um problema: " + data;
+			});
+		};
 
 		$scope.resetRegisterForm = function () {
 			delete $scope.register;
@@ -41,8 +51,9 @@
 			user.type = {'idType': 2, name: 'Visitante', code: 2};
 			usersApi.saveUser(user).then(function onSuccess(response) {
 				delete $scope.user;
+				$mdDialog.hide();
 				$scope.registerForm.$setPristine();
-				$location.path("/login");
+				$location.path("/");
 			}).catch(function onError(response) {
 				$scope.userExit = true;
 				$scope.emailExist = user.email;
@@ -52,6 +63,8 @@
 			});
 		};
 
-	});
+		loadUsers();
+
+	}]);
 
 })();

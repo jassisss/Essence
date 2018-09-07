@@ -9,17 +9,17 @@
 		});
 
 		$routeProvider.when("/adminUser", {
-			templateUrl: "view/adminUserView.html",
+			templateUrl: "../view/app/userAdminView.html",
 			controller: "adminUserCtrl",
 		});
 
 		$routeProvider.when("/visitorUser", {
-			templateUrl: "view/visitorUserView.html",
-			controller: "loginCtrl",
+			templateUrl: "../view/app/userVisitorView.html",
+			controller: "visitorUserCtrl",
 		});
 		
 		$routeProvider.when("/register", {
-			templateUrl: "view/registerView.html",
+			templateUrl: "../view/app/registerBsModal.html",
 			controller: "registerCtrl",
 			resolve: {
 				users: function(usersApi) {

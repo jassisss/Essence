@@ -4,6 +4,11 @@
 	color: #2922BB;
 } 
 
+.form-title {
+	text-align: center;
+	color: #2922BB;
+}
+
 .clear-div {
 	margin: 0 auto;
 	padding: 0px;
@@ -61,9 +66,8 @@
 
 .forgot {
 	height: auto;
-	width: 300px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 250px;
+	margin: 0 auto;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	color: red;
@@ -71,10 +75,9 @@
 
 .register {
 	height: auto;
-	width: 150px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+	width: 240px;
+	margin: 0 auto;
+	margin-top: 0px;
 	margin-bottom: 0px;
 	color: blue;	
 }
@@ -114,9 +117,7 @@
 	margin-top: 10px;
 	width: 350px;
 	background-color: #f4f4f4;
-	margin-left: auto;
-	margin-right: auto;
-
+	margin: 0 auto;
 }
 
 .list > .jumbotron {
@@ -137,15 +138,27 @@
 	margin-right: auto;
 }
 
-.input:-webkit-autofill {
-	background-color: #c2c2c2;
-}
-
 /*Subscribe AngularJS Material Styles*/
 
+.login-modal {
+	opacity: 0.5;
+}
+
+.login-form {
+	margin-top: 10px;
+	padding-top: 10px;
+	height: auto;
+}
+
+.register-form {
+	margin-top: 10px;
+	padding-top: 10px;
+	height: auto;
+}
+
 .app-input-container {
-	padding: 0px;
-	height: 32px;
+	margin-top: 5px;
+	padding-top: 10px;
 }
 
 .layout-row {

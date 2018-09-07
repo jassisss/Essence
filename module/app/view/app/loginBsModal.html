@@ -1,25 +1,35 @@
-<md-dialog class="jumbotron bordered" aria-label="Login Modal" ng-controller="loginCtrl">
-    <h3 style="text-align: center;">{{loginNomeCtrl}}</h3>
-    <hr>
-    <form name="loginForm">
+<md-dialog class="jumbotron bordered login-modal" aria-label="Login Modal" ng-controller="loginCtrl">
+    <h3 class="form-title">{{loginNomeCtrl}}</h3>
+
+    <md-divider></md-divider>
+
+    <form name="loginForm" class="login-form">
 
       <div class="alert alert-danger" role="alert" ng-show="userNotExit">Usuário ou Senha incorretos!</div>
       
-      <input ng-model="login.email" type="email" name="email" class="form-control" placeholder="E-mail" ng-required="true">
-      <div class="forgot" ng-messages="loginForm.email.$error" ng-if="loginForm.email.$dirty">
-        <p ng-message="required">E-mail é um campo obrigatório!</p>
-        <p ng-message="email">O e-mail é inválido!</p>
-      </div>
+      <div>
+        <md-input-container class="md-block ">
+          <label>E-Mail</label>
+          <input class="app-input-container" ng-model="login.email" type="email" name="email" ng-required="true" ng-keyup="resetLoginForm()">
+          <div class="forgot" ng-messages="loginForm.email.$error" ng-if="loginForm.email.$dirty">
+            <p ng-message="required">E-mail é um campo obrigatório!</p>
+            <p ng-message="email">O e-mail é inválido!</p>
+          </div>
+        </md-input-container>      
 
-      <input ng-model="login.password" type="password" name="senha" class="form-control" placeholder="Senha" ng-required="true">
-      <div class="forgot" ng-messages="loginForm.password.$error" ng-if="loginForm.password.$dirty">
-        <p ng-message="required">Senha é um campo obrigatório!</p>
-      </div>
+        <md-input-container class="md-block">
+          <label>Senha</label>
+          <input class="app-input-container" ng-model="login.password" type="password" name="password" ng-required="true">
+          <div class="forgot" ng-messages="loginForm.password.$error" ng-if="loginForm.password.$dirty">
+            <p ng-message="required">Senha é um campo obrigatório!</p>
+          </div>
+        </md-input-container>
+      </div>      
 
     </form>
-    <p class="forgot"><a href="#/forgot">Esqueceu a senha?</a></p>
+    <p class="forgot"><a href="" ng-click="showForgotDialog($event)">Esqueceu a senha?</a></p>
     <!-- <a class="btn btn-primary btn-block" href="#/listUsers">Entrar</a> -->
     <button class="btn btn-primary btn-block form-control" ng-disabled="loginForm.$invalid" ng-click="validateUser(login)">Entrar</button>
-    <p class="register"><a href="#/register">Não sou registrado.</a></p>
+    <p class="register"><a href="" ng-click="showRegisterDialog($event)">Fazer o registro.</a></p>
 
 </md-dialog>

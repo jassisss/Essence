@@ -1,0 +1,55 @@
+<md-dialog class="jumbotron bordered login-modal" aria-label="Registro Modal" ng-controller="registerCtrl">
+
+		<h3 class="form-title">{{registerNomeCtrl}}</h3>
+
+		<md-divider></md-divider>
+
+		<form name="registerForm" class="register-form">
+
+			<div class="alert alert-danger" role="alert" ng-show="userExit">{{emailExist + " já existe!"}}</div>
+
+			<md-input-container class="md-block ">
+				<label>Nome</label>
+				<input class="app-input-container" ng-model="register.name" type="text" name="nomeRegister" ng-required="true">
+				<div class="forgot" ng-messages="registerForm.nomeRegister.$error" ng-if="registerForm.nomeRegister.$dirty">
+					<p ng-message="required">Nome é um campo obrigatório!</p>
+				</div>
+			</md-input-container>
+
+			<md-input-container class="md-block ">
+				<label>E-mail</label>
+				<input class="app-input-container" ng-model="register.email" type="email" name="emailRegister" ng-required="true">
+				<div class="forgot" ng-messages="registerForm.emailRegister.$error" ng-if="registerForm.emailRegister.$dirty">
+					<p ng-message="required">E-mail é um campo obrigatório!</p>
+					<p ng-message="email">O e-mail é inválido!</p>
+				</div>
+			</md-input-container>
+
+			<md-input-container class="md-block ">
+				<label>Senha</label>
+				<input class="app-input-container" ng-model="register.password" type="password" name="senhaRegister" ng-required="true" ng-change="registerPasswordChanged()">
+				<div class="forgot" ng-messages="registerForm.password.$error" ng-if="registerForm.password.$dirty">
+					<p ng-message="required">Senha é um campo obrigatório!</p>
+				</div>
+			</md-input-container>
+
+			<md-input-container class="md-block ">
+				<label>Confirmar senha</label>
+				<input class="app-input-container" ng-model="confirmPassword" type="password" name="confirmPassword" ng-required="true" confirm-password="register.password">
+				<div class="forgot" ng-messages="registerForm.confirmPassword.$error" ng-if="registerForm.confirmPassword.$dirty">
+					<p ng-message="required">Confirmar a senha é obrigatório!</p>
+					<p ng-message="confirm">As senhas devem conferir!</p>
+				</div>
+			</md-input-container>
+
+		</form>
+
+		<ul class="nav bordered appNavContainer">
+		      <li class="nav-item" title="Confirma Adição" ng-show="registerForm.$valid">
+				<a class="nav-link" href="" ng-click="registerUser(register)"><md-icon md-svg-icon="check"></md-icon></a>
+			  </li>
+		      <li class="nav-item" title="Limpa Formulário">
+				<a class="nav-link" href="" ng-click="resetRegisterForm()"><md-icon md-svg-icon="redo"></md-icon></a>
+			  </li>
+		</ul>
+</md-dialog>
