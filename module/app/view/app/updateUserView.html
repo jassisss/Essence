@@ -1,0 +1,47 @@
+<div class="container">
+	
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="#/adminUser">Início</a></li>
+	    <li class="breadcrumb-item"><a href="#/listUsers">{{listUsersNameCtrl}}</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">{{updateUsersNameCtrl}}</li>
+	  </ol>
+	</nav>
+
+
+	<div class="jumbotron  bordered">
+		<h3 class="app-title" style="text-align: center;">{{updateUsersNameCtrl}}</h3>
+		<hr>
+		<form name="updateUserForm">
+			<input ng-model="user.name" type="text" name="nomeRegister" class="form-control" placeholder="Nome" ng-required="true">
+			<div class="forgot" ng-messages="updateUserForm.nomeRegister.$error" ng-if="updateUserForm.nomeRegister.$dirty">
+				<p ng-message="required">Nome é um campo obrigatório!</p>
+			</div>
+
+			<input ng-model="user.email" type="email" name="emailRegister" class="form-control" placeholder="E-mail" ng-required="true">
+			<div class="forgot" ng-messages="updateUserForm.emailRegister.$error" ng-if="updateUserForm.emailRegister.$dirty">
+				<p ng-message="required">E-mail é um campo obrigatório!</p>
+				<p ng-message="email">O e-mail é inválido!</p>
+			</div>
+
+			<select ng-model="user.type" ng-options="type.name for type in types track by type.name" name="type.name" class="form-control">
+				<option value="">Selecione um tipo</option>
+			</select>
+			<div class="forgot" ng-messages="updateUserForm.typeRegister.$error" ng-if="updateUserForm.typeRegister.$dirty">
+				<p ng-message="required">E-mail é um campo obrigatório!</p>
+				<p ng-message="email">O e-mail é inválido!</p>
+			</div>
+		</form>
+
+		<ul class="nav bordered appNavContainer">
+		      <li class="nav-item" title="Confirma Adição" ng-show="updateUserForm.$dirty">
+				<a class="nav-link" href="" ng-click="updateUser(user)"><i class="fa fa-check"></i></a>
+			  </li>
+		      <li class="nav-item" title="Limpa Formulário">
+				<a class="nav-link" href="" ng-click="reloadUpdateUser()"><i class="fa fa-redo"></i></a>
+			  </li>
+		</ul>
+
+	</div>
+
+</div>

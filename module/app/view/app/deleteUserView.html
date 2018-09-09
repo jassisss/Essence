@@ -1,0 +1,57 @@
+<div class="container">
+  
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#/adminUser">Início</a></li>
+      <li class="breadcrumb-item"><a href="#/listUsers">{{listUsersNameCtrl}}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{deleteUsersNameCtrl}}</li>
+    </ol>
+  </nav>
+
+
+  <div class="jumbotron  bordered">
+    <h3 class="app-title" style="text-align: center;">{{deleteUsersNameCtrl}}</h3>
+    <hr>
+
+    <form name="deleteUserForm">
+      <input ng-model="user.name" type="text" class="form-control" ng-disabled="true">
+
+      <input ng-model="user.email" type="text" class="form-control" ng-disabled="true">
+
+      <input ng-model="user.type.name" type="text" class="form-control" ng-disabled="true">
+
+      <input type="checkbox" ng-model="delete.selected"><span class="text-danger"> Confirma Exclusão?</span><br>
+
+    </form>    
+
+    <ul class="nav bordered appNavContainer">
+        <li class="nav-item" title="Confirma Exclusão" ng-show="delete.selected">
+            <a class="nav-link" href="" ng-click="deleteUser()"><i class="fa fa-times-circle text-danger"></i></a>
+        </li>
+        <li class="nav-item" title="Retorna" ng-show="!delete.selected">
+            <a class="nav-link" href="#/listUsers"><i class="fa fa-caret-square-left"></i></a>
+        </li>
+    </ul>
+
+  </div>
+
+</div>
+<!-- <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->

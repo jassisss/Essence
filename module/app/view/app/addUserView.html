@@ -1,0 +1,61 @@
+<div class="container">
+	
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="#/adminUser">Início</a></li>
+	    <li class="breadcrumb-item"><a href="#/listUsers">{{listUsersNameCtrl}}</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">{{addUsersNameCtrl}}</li>
+	  </ol>
+	</nav>
+
+
+	<div class="jumbotron  bordered">
+		<h3 class="app-title" style="text-align: center;">{{addUsersNameCtrl}}</h3>
+		<hr>
+		<form name="addUserForm">
+
+			<div class="alert alert-danger" role="alert" ng-show="userExit">{{emailExist + " já existe!"}}</div>
+
+			<input ng-model="user.name" type="text" name="nomeRegister" class="form-control" placeholder="Nome" ng-required="true">
+			<div class="forgot" ng-messages="addUserForm.nomeRegister.$error" ng-if="addUserForm.nomeRegister.$dirty">
+				<p ng-message="required">Nome é um campo obrigatório!</p>
+			</div>
+
+			<input ng-model="user.email" type="email" name="emailRegister" class="form-control" placeholder="E-mail" ng-required="true">
+			<div class="forgot" ng-messages="addUserForm.emailRegister.$error" ng-if="addUserForm.emailRegister.$dirty">
+				<p ng-message="required">E-mail é um campo obrigatório!</p>
+				<p ng-message="email">O e-mail é inválido!</p>
+			</div>
+
+			<select ng-model="user.type" ng-options="type.name for type in types" name="typeRegister" class="form-control" ng-required="true">
+				<option value="">Selecione um tipo</option>
+			</select>
+			<div class="forgot" ng-messages="addUserForm.typeRegister.$error" ng-if="addUserForm.typeRegister.$dirty">
+				<p ng-message="required">Tipo é um campo obrigatório!</p>
+			</div>
+
+			<input ng-model="user.password" type="password" name="senhaRegister" class="form-control" placeholder="Senha" ng-required="true" ng-change="userPasswordChanged()">
+			<div class="forgot" ng-messages="addUserForm.senhaRegister.$error" ng-if="addUserForm.senhaRegister.$dirty">
+				<p ng-message="required">Senha é um campo obrigatório!</p>
+			</div>
+
+			<input ng-model="confirmPassword" type="password" name="confirmSenhaRegister" class="form-control" placeholder="Confirmar senha" required="true" confirm-password="user.password">
+			<div class="forgot" ng-messages="addUserForm.confirmSenhaRegister.$error" ng-if="addUserForm.confirmSenhaRegister.$dirty">
+				<p ng-message="required">Confirmar a senha é obrigatório!</p>
+				<p ng-message="confirm">As senhas devem conferir!</p>
+			</div>
+
+		</form>
+
+		<ul class="nav bordered appNavContainer">
+		      <li class="nav-item" title="Confirma Adição" ng-show="addUserForm.$valid">
+				<a class="nav-link" href="" ng-click="addUser(user)"><i class="fa fa-check"></i></a>
+			  </li>
+		      <li class="nav-item" title="Limpa Formulário">
+				<a class="nav-link" href="" ng-click="reloadAddUser()"><i class="fa fa-redo"></i></a>
+			  </li>
+		</ul>
+
+	</div>
+
+</div>

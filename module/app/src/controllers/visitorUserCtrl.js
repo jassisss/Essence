@@ -1,12 +1,16 @@
 (function() {
     'use strict';
 
-	app.controller('visitorUserCtrl', [ '$scope', '$mdSidenav', 
+	app.controller('visitorUserCtrl', [ '$scope', '$mdSidenav', '$location', 
 
-	function ($scope, $mdSidenav) {
+	function ($scope, $mdSidenav, $location) {
 	  // *********************************
 	  // Internal methods
 	  // *********************************
+	  
+	  $scope.logout = function() {
+	  	$location.path("/login");
+	  }
 
 	  /**
 	   * Hide or Show the 'left' sideNav area

@@ -4,22 +4,22 @@
 	app.config(function ($routeProvider) {
 
 		$routeProvider.when("/login", {
-			templateUrl: "../view/app/loginBsModal.html",
+			templateUrl: "../../module/app/view/app/loginView.html",
 			controller: "loginCtrl",
 		});
 
 		$routeProvider.when("/adminUser", {
-			templateUrl: "../view/app/userAdminView.html",
+			templateUrl: "../../module/app/view/app/userAdminView.html",
 			controller: "adminUserCtrl",
 		});
 
 		$routeProvider.when("/visitorUser", {
-			templateUrl: "../view/app/userVisitorView.html",
+			templateUrl: "../../module/app/view/app/userVisitorView.html",
 			controller: "visitorUserCtrl",
 		});
 		
 		$routeProvider.when("/register", {
-			templateUrl: "../view/app/registerBsModal.html",
+			templateUrl: "../../module/app/view/app/registerBsModal.html",
 			controller: "registerCtrl",
 			resolve: {
 				users: function(usersApi) {
@@ -29,12 +29,12 @@
 		});
 		
 		$routeProvider.when("/forgot", {
-			templateUrl: "view/forgotView.html",
+			templateUrl: "../../module/app/view/app/forgotView.html",
 			controller: "forgotCtrl",
 		});
 
 		$routeProvider.when("/listUsers", {
-			templateUrl: "view/listUsersView.html",
+			templateUrl: "../../module/app/view/app/listUsersView.html",
 			controller: "listUsersCtrl",
 			resolve: {
 				users: function(usersApi) {
@@ -44,7 +44,7 @@
 		});
 		
 		$routeProvider.when("/reloadListUsers", {
-			templateUrl: "view/listUsersView.html",
+			templateUrl: "../../module/app/view/app/listUsersView.html",
 			controller: "listUsersCtrl",
 			resolve: {
 				users: function(usersApi) {
@@ -55,7 +55,7 @@
 		});
 
 		$routeProvider.when("/addUser", {
-			templateUrl: "view/addUserView.html",
+			templateUrl: "../../module/app/view/app/addUserView.html",
 			controller: "addUserCtrl",
 			resolve: {
 				users: function(usersApi) {
@@ -68,12 +68,12 @@
 		});
 
 		$routeProvider.when("/deleteUser", {
-			templateUrl: "view/deleteUserView.html",
+			templateUrl: "../../module/app/view/app/deleteUserView.html",
 			controller: "deleteUserCtrl",
 		});
 
 		$routeProvider.when("/updateUser/:id", {
-			templateUrl: "view/updateUserView.html",
+			templateUrl: "../../module/app/view/app/updateUserView.html",
 			controller: "updateUserCtrl",
 			resolve: {
 				user: function(usersApi, $route) {
@@ -89,7 +89,7 @@
 		});
 
 		$routeProvider.when("/reloadUpdateUser/:id", {
-			templateUrl: "view/updateUserView.html",
+			templateUrl: "../../module/app/view/app/updateUserView.html",
 			controller: "reloadUpdateUserCtrl",
 			resolve: {
 				user: function(usersApi, $route) {

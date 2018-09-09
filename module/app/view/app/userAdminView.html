@@ -1,45 +1,22 @@
-<!DOCTYPE html>
-<html ng-app="essence">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Aplicativo para verificar perfis e comportamentos profissionais">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Application Name -->
-	<title>Essence</title>
-	<!-- Application Icon -->
-	<!-- <link rel="shortcut icon" href="img/cgctec.ico"> -->
-	<!-- Styles -->
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="lib/angular-material/angular-material.css">
-	<link rel="stylesheet" href="assets/styles/app.css">
-	<link rel="stylesheet" href="assets/styles/material.css">
-	<style>
-	    body{
-	        background: url('assets/img/overlays/i05.png');
-	        background-repeat: repeat;
-	        background-color: #4E4E50;
-	        color: #fff;
-	    }
-	</style>
-</head>
-<body>
-	<div layout="column" ng-cloak>
-	  <md-toolbar class="md-primary">
+	<div ng-controller="adminUserCtrl" layout="column" ng-cloak>
+	  <md-toolbar class="bg-transparent glyphicon-text-color">
 	  	  <div class="md-toolbar-tools">
 	  	    <md-button class="md-icon-button" aria-label="Settings">
 	  	      <md-icon md-svg-icon="logo2"></md-icon>
 	  	    </md-button>
 
 	  	    <h2 flex md-truncate>ESSENCE</h2>
-	  	    <h3 flex md-truncate>Área Administrador</h3>
 
+	  	    <md-button aria-label="Login" ng-click="logout()">
+	  	      <span>Logout&nbsp;<md-icon md-svg-icon="assets/img/svg/solid/sign-out-alt.svg" class="s12"></md-icon></span>
+	  	    </md-button>
 	  	  </div>
 	  </md-toolbar>
 	  	<br>
-
 	  </md-toolbar>
 
+	  <div ng-controller="adminUserCtrl"></div>
+	  <h1 style="color: white">ÁREA DO ADMINISTRADOR</h1>
 	  <nav class="fixed-bottom text-center footer">
 
 		  <md-content md-scroll-y layout="row" flex class="bg-transparent footer">
@@ -53,36 +30,5 @@
 
 		  </md-content>
 	  </nav>
-
-
 	</div>
-	<!-- Scripts -->	
-	<!-- Angular -->
-	<script src="lib/angular/angular.js" type="text/javascript"></script>
-	<script src="lib/angular-route/angular-route.js" type="text/javascript"></script>
-	<script src="lib/angular-aria/angular-aria.js" type="text/javascript"></script>
-	<script src="lib/angular-animate/angular-animate.js" type="text/javascript"></script>
-	<script src="lib/angular-messages/angular-messages.js" type="text/javascript"></script>
-	<script src="lib/angular-material/angular-material.js" type="text/javascript"></script>
-	<!-- Application -->
-	<script src="module/app/app.js" type="text/javascript"></script>
-	<script src="assets/scripts/angular-locale_pt-br.js" type="text/javascript"></script>
-	<!-- Controllers -->
-	<script src="module/app/src/controllers/appCtrl.js" type="text/javascript"></script>
-	<script src="module/app/src/controllers/loginCtrl.js" type="text/javascript"></script>
-	<script src="module/app/src/controllers/registerCtrl.js" type="text/javascript"></script>
-	<script src="module/app/src/controllers/forgotCtrl.js" type="text/javascript"></script>
-	<!-- Services -->
-	<script src="module/app/src/services/userApiService.js" type="text/javascript"></script>
-	<script src="module/app/src/services/idGenerator.js" type="text/javascript"></script>
-	<!-- Configs -->
-	<script src="module/app/config/iconConfig.js" type="text/javascript"></script>
-	<script src="module/app/config/themeConfig.js" type="text/javascript"></script>
-	<script src="module/app/config/locationConfig.js" type="text/javascript"></script>
-	<!-- Values -->
-	<script src="module/app/src/value/configValue.js" type="text/javascript"></script>
-	<!-- Diretives -->
-	<script src="module/app/src/directives/confirmPasswordDirective.js" type="text/javascript"></script>
 
-</body>
-</html>

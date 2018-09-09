@@ -1,16 +1,21 @@
 (function() {
 	'use strict';
 
-	app.controller('appCtrl', ['$scope', '$mdDialog', 
+	app.controller('appCtrl', ['$scope', '$mdDialog', '$location',
 
-		function($scope, $mdDialog){
+		function($scope, $mdDialog, $location){
 
+			document.addEventListener('touchmove', {passive: true});
 			$scope.message = "Hello World!";
 			$scope.ano = new Date();
 			$scope.loginNomeCtrl = "Formulário de Login";
 
 			$scope.registerDialog = function (ev) {
 				console.log(ev);
+			};
+
+			$scope.gotoView = function (view) {
+				$location.path("/listUsers");
 			};
 
 

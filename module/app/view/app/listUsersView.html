@@ -1,0 +1,51 @@
+<div class="container list">
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="#/adminUser">Início</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">{{listUsersNameCtrl}}</li>
+	  </ol>
+	</nav>
+
+	<div class="jumbotron bordered">
+		<h3 class="app-title" style="text-align: center;">{{listUsersNameCtrl}}</h3>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th>*</th>
+		      <th>ID</th>
+		      <th>Nome</th>
+		      <th>E-mail</th>
+		      <th>Tipo</th>
+		      <th>Última Alteração</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="user in users">
+		      <td><input type="radio" name="sel" value="{{user}}" ng-model="data.name" ng-change="pegar(user)"></td>
+		      <td>{{user.idUser}}</td>
+		      <td>{{user.name}}</td>
+		      <td>{{user.email}}</td>
+		      <td>{{user.type.name}}</td>
+		      <td>{{user.modifyDate | date:"dd/MM/yyyy hh:mm"}}</td>
+		    </tr>
+		   </tbody>
+		</table>
+		
+		<ul class="nav bordered appNavContainer">
+		  <li class="nav-item" title="Adiciona Usuário">
+		    <a class="nav-link active" href="#/addUser"><i class="fa fa-user-plus"></i></a>
+		  </li>
+		  <li class="nav-item" ng-if="mostra" title="Edita Usuário">
+		    <a class="nav-link" href="#/updateUser/{{idUserSelected}}"><i class="fa fa-edit"></i></a>
+		  </li>
+		  <li class="nav-item" ng-if="mostra" title="Exclui Usuário">
+		    <a class="nav-link" href="#/deleteUser"><i class="fa fa-trash-alt"></i></a>
+		  </li>
+		  <li class="nav-item" ng-if="mostra" title="Reinicia a Lista">
+		    <a class="nav-link" href="" ng-click="reloadUser()"><i class="fa fa-sync"></i></a>
+		  </li>
+		</ul>
+
+	</div>
+
+</div>

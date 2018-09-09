@@ -12,16 +12,16 @@
           <label>E-Mail</label>
           <input class="app-input-container" ng-model="login.email" type="email" name="email" ng-required="true" ng-keyup="resetLoginForm()">
           <div class="forgot" ng-messages="loginForm.email.$error" ng-if="loginForm.email.$dirty">
-            <p ng-message="required">E-mail é um campo obrigatório!</p>
-            <p ng-message="email">O e-mail é inválido!</p>
+            <div ng-message="required">E-mail é um campo obrigatório!</div>
+            <div ng-message="email">O e-mail é inválido!</div>
           </div>
         </md-input-container>      
-
+        
         <md-input-container class="md-block">
           <label>Senha</label>
           <input class="app-input-container" ng-model="login.password" type="password" name="password" ng-required="true">
           <div class="forgot" ng-messages="loginForm.password.$error" ng-if="loginForm.password.$dirty">
-            <p ng-message="required">Senha é um campo obrigatório!</p>
+            <div ng-message="required">Senha é um campo obrigatório!</div>
           </div>
         </md-input-container>
       </div>      

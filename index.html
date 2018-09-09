@@ -24,41 +24,10 @@
 	    }
 	</style>
 </head>
-<body>
-	<div ng-controller="appCtrl" layout="column" ng-cloak>
-	  <md-toolbar class="bg-transparent glyphicon-text-color">
-	  	  <div class="md-toolbar-tools">
-	  	    <md-button class="md-icon-button" aria-label="Settings">
-	  	      <md-icon md-svg-icon="logo2"></md-icon>
-	  	    </md-button>
+<body ng-controller="appCtrl">
+	<div ng-view></div>
+	<div ng-include="'../module/app/view/app/footerView.html'"></div>
 
-	  	    <h2 flex md-truncate>ESSENCE</h2>
-
-	  	    <md-button aria-label="Login" ng-click="showLoginDialog($event)">
-	  	      <span>Login&nbsp;<md-icon md-svg-icon="assets/img/svg/solid/sign-in-alt.svg" class="s12"></md-icon></span>
-	  	    </md-button>
-	  	  </div>
-	  </md-toolbar>
-	  	<br>
-
-	  </md-toolbar>
-
-	  <nav class="fixed-bottom text-center footer">
-
-		  <md-content md-scroll-y layout="row" flex class="bg-transparent footer">
-
-		    <div layout="row" flex="noshrink" layout-align="center center">
-		      <div id="license-footer" flex>
-		        Desenvolvido por <a ng-href="http:\\www.cgctec.com.br" target="_blank" class="md-secondary">CGC Tecnologia Ltda</a>.&nbsp;&copy;&nbsp;2017&nbsp;-&nbsp;&nbsp;{{ano | date:'yyyy'}}.&nbsp;
-		        Código licenciado sob o <a ng-href=""  class="md-accent">MIT License</a>.
-		      </div>
-		    </div>
-
-		  </md-content>
-	  </nav>
-
-
-	</div>
 	<!-- Scripts -->	
 	<!-- Angular -->
 	<script src="lib/angular/angular.js" type="text/javascript"></script>
@@ -75,10 +44,14 @@
 	<script src="module/app/src/controllers/loginCtrl.js" type="text/javascript"></script>
 	<script src="module/app/src/controllers/registerCtrl.js" type="text/javascript"></script>
 	<script src="module/app/src/controllers/forgotCtrl.js" type="text/javascript"></script>
+	<script src="module/app/src/controllers/listUsersCtrl.js" type="text/javascript"></script>
+	<script src="module/app/src/controllers/adminUserCtrl.js" type="text/javascript"></script>
+	<script src="module/app/src/controllers/visitorUserCtrl.js" type="text/javascript"></script>
 	<!-- Services -->
 	<script src="module/app/src/services/userApiService.js" type="text/javascript"></script>
 	<script src="module/app/src/services/idGenerator.js" type="text/javascript"></script>
 	<!-- Configs -->
+	<script src="module/app/config/routeConfig.js" type="text/javascript"></script>
 	<script src="module/app/config/iconConfig.js" type="text/javascript"></script>
 	<script src="module/app/config/themeConfig.js" type="text/javascript"></script>
 	<script src="module/app/config/locationConfig.js" type="text/javascript"></script>
