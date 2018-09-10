@@ -10,7 +10,10 @@
 	  // 
 	  
 	  $scope.logout = function() {
-	  	$location.path("/login");
+	  	$scope.changeShowLogin(true);
+	  	$scope.changeShowAdmin(false);
+	  	$scope.changeShowVisitor(false);
+	    $location.path("/");
 	  }
 
 	  /**
@@ -28,14 +31,6 @@
       function toggleUsersList() {
 	    $mdSidenav('left').toggle();
 	  };
-
-	  // /**
-	  //  * Select the current avatars
-	  //  * @param menuId
-	  //  */
-	  // function selectUser ( user ) {
-	  //   self.selected = angular.isNumber(user) ? $scope.users[user] : user;
-	  // };		
 
 
 	}]);

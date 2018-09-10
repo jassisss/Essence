@@ -9,7 +9,9 @@
 	  // *********************************
 	  
 	  $scope.logout = function() {
-	  	$location.path("/login");
+	  	$scope.changeShowLogin(true);
+	  	$scope.changeShowAdmin(false);
+	  	$scope.changeShowVisitor(false);
 	  }
 
 	  /**
@@ -40,3 +42,6 @@
 	}]);
 
 })();
+
+
+

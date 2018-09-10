@@ -4,7 +4,7 @@
 	app.controller('loginCtrl', [ '$scope', '$location', 'usersApi', '$mdDialog',
 
 	function ($scope, $location, usersApi, $mdDialog) {
-		
+
 		$scope.loginNomeCtrl = "Formulário de Entrada";
 
 		$scope.userNotExit = false;
@@ -24,9 +24,15 @@
 				$scope.userNotExit = false;
 				$scope.loginForm.$setPristine();
 				if (response.data.type.name === 'Administrador') {
-					$location.path("/adminUser");
+					$scope.changeShowLogin(false);
+					$scope.changeShowAdmin(true);
+					$scope.changeShowVisitor(false);
+					$location.path("/");
 				}else{
-					$location.path("/visitorUser");
+					$scope.changeShowLogin(false);
+					$scope.changeShowAdmin(false);
+					$scope.changeShowVisitor(true);
+					$location.path("/");
 				}
 			}).catch(function onError(response) {
 				$scope.userNotExit = true;
@@ -34,12 +40,30 @@
 				$scope.loginForm.$setPristine();
 			});		
 
-		};	
+		};
 
 		$scope.registerDialog = function (ev) {
 			$scope.cancel();
 			$scope.showRegisterDialog(ev);
 		};
+
+
+		$scope.showLoginDialog = function(ev) {
+		  $mdDialog.show({
+		    controller: DialogController,
+		    templateUrl: '../../module/app/view/app/loginBsModal.html',
+		    scope: $scope,
+		    preserveScope: true,
+		    parent: angular.element(document.body),
+		    targetEvent: ev,
+		    clickOutsideToClose:true
+		  }).then(function(answer) {
+		        $scope.status = 'Você disse que a informação era "' + answer + '".';
+		      }, function() {
+		        $scope.status = 'Você cancelou o diálogo.';
+		      });
+		};
+
 		
 		$scope.showRegisterDialog = function(ev) {
 		  $mdDialog.show({
@@ -82,7 +106,21 @@
 		  $scope.answer = function(answer) {
 		    $mdDialog.hide(answer);
 		  };
-		}
+
+		  $scope.showAdminSection = function ($rootScope) {
+		  	console.log('passou 77777');
+		  	$rootScope.changeShowAdmin(true);
+		  	$rootScope.changeShowLogin(false);
+		  	$rootScope.changeShowVisitor(false);
+		  	// $scope.showLogin = false;
+		  	// $scope.showAdmin = true;
+		  	// $scope.showVisitor = false;
+		  	// $location.path("/");
+		  	console.log('passou de novo');
+		  	console.log($scope.showLogin + ' - ' + $scope.showAdmin + ' - ' + $scope.showVisitor);
+		  };
+		
+		}		
 
 
 	}]);
