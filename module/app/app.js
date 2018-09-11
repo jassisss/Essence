@@ -1,6 +1,12 @@
 var app = angular.module("essence",["ngMessages", "ngRoute", "ngMaterial"]);
 
 	app.run(function($rootScope) {
+		// Select User
+		$rootScope.idUserSelected = 0;
+		$rootScope.changeIdUserSelected = function(id) {
+			$rootScope.idUserSelected = id;
+  		};
+
 		// Show Login Section
 	    $rootScope.showLogin = true;
 		$rootScope.changeShowLogin = function(status) {
@@ -17,6 +23,12 @@ var app = angular.module("essence",["ngMessages", "ngRoute", "ngMaterial"]);
 	    $rootScope.showVisitor = false;
 		$rootScope.changeShowVisitor = function(status) {
 			$rootScope.showVisitor = status;
+			return;
+  		};
+		// Loged User
+	    $rootScope.logedUser = [];
+		$rootScope.changeLogedUser = function(user) {
+			$rootScope.logedUser = user;
 			return;
   		};
 

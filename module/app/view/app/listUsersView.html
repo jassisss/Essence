@@ -12,21 +12,21 @@
 		  <thead>
 		    <tr>
 		      <th>*</th>
-		      <th>ID</th>
-		      <th>Nome</th>
+		      <th show-gt-sm hide>ID</th>
+		      <th show-gt-sm hide>Nome</th>
 		      <th>E-mail</th>
-		      <th>Tipo</th>
-		      <th>Última Alteração</th>
+		      <th show-gt-sm hide>Tipo</th>
+		      <th show-gt-sm hide>Última Alteração</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr ng-repeat="user in users">
 		      <td><input type="radio" name="sel" value="{{user}}" ng-model="data.name" ng-change="pegar(user)"></td>
-		      <td>{{user.idUser}}</td>
-		      <td>{{user.name}}</td>
+		      <td show-gt-sm hide>{{user.idUser}}</td>
+		      <td show-gt-sm hide>{{user.name}}</td>
 		      <td>{{user.email}}</td>
-		      <td>{{user.type.name}}</td>
-		      <td>{{user.modifyDate | date:"dd/MM/yyyy hh:mm"}}</td>
+		      <td show-gt-sm hide>{{user.type.name}}</td>
+		      <td show-gt-sm hide>{{user.modifyDate | date:"dd/MM/yyyy hh:mm"}}</td>
 		    </tr>
 		   </tbody>
 		</table>

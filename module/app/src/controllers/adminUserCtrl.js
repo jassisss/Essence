@@ -19,19 +19,13 @@
 	  /**
 	   * Hide or Show the 'left' sideNav area
 	   */
-	  
-	  $scope.toggleLeft = buildToggler('left');
+	   $scope.toggleLeft = buildToggler('left');
 
-      function buildToggler(componentId) {
-	      return function() {
-	        $mdSidenav(componentId).toggle();
-      	}
-      };
-
-      function toggleUsersList() {
-	    $mdSidenav('left').toggle();
-	  };
-
+	   function buildToggler(componentId) {
+	     return function() {
+	       $mdSidenav(componentId).toggle();
+	     };
+	   }
 
 	}]);
 

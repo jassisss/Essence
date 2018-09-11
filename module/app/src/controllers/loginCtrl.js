@@ -19,6 +19,7 @@
 
 		$scope.validateUser = function (login) {
 			usersApi.loginUser(login).then(function onSuccess(response) {
+				$scope.changeLogedUser(response.data);
 				delete $scope.login;
 				$mdDialog.cancel();
 				$scope.userNotExit = false;
