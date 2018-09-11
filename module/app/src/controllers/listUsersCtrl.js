@@ -9,6 +9,13 @@
 
 		$scope.mostra = false;
 
+		$scope.startAdmin = function () {
+			$scope.changeShowLogin(false);
+			$scope.changeShowAdmin(true);
+			$scope.changeShowVisitor(false);
+			$location.path("/");
+		};
+
 		$scope.reloadUser = function() {
 			$scope.mostra = false;
 			$location.path("/reloadListUsers");

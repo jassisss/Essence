@@ -16,15 +16,7 @@
 	<link rel="stylesheet" href="assets/styles/app.css">
 	<!-- <link rel="stylesheet" href="assets/styles/docs.css"> -->
 	<link rel="stylesheet" href="assets/styles/material.css">
-	<style>
-	    body{
-	        background: url('assets/img/overlays/i05.png'), url('assets/img/jpg/bg_night02.jpg');
-	        background-repeat: repeat, no-repeat;
-	        background-size: auto, cover;
-	        background-color: #4E4E50;
-	        color: #fff;
-	    }
-	</style>
+
 </head>
 <body ng-controller="appCtrl">
 
@@ -32,7 +24,7 @@
 	<section ng-if="showLogin">
 		<div ng-controller="loginCtrl" layout="column" ng-cloak>
 
-		  <md-toolbar class="bg-transparent glyphicon-text-color">
+		  <md-toolbar class="bg-secondary">
 		  	  <div class="md-toolbar-tools">
 		  	    <md-button class="md-icon-button" aria-label="Settings">
 		  	      <md-icon md-svg-icon="logo2"></md-icon>

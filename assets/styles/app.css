@@ -61,7 +61,13 @@
 
 .footer {
 	text-align: center;
-	color: #FFFFFF;
+	font-size: 11px;
+	color: #A2A2A2;
+}
+
+.footer-color {
+	font-size: 11px;
+	color: #222222;
 }
 
 .forgot {
