@@ -1,0 +1,98 @@
+
+		<div ng-controller="adminUserCtrl" layout="row" flex ng-cloak>
+
+		  <section layout="row" flex>
+
+		    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-sm')">
+
+				<header class="nav-header">
+				  <div class="docs-logo">
+				    <img src="assets/img/svg/app/Essence_Logo01.svg" alt="ESSENCE Logo" />
+				    <h1 class="docs-logotype md-heading">ESSENCE</h1>
+				  </div>
+				</header>
+
+				<ul class="skip-links">
+				  <li class="md-whiteframe-z2">
+				    <md-button ng-click="focusMainContent($event)" href="#">Click no conteúdo</md-button>
+				  </li>
+				</ul>
+
+				<md-content flex role="navigation">
+					<ul class="docs-menu">
+						<li class="parent-list-item  parentActive" ng-class="{'parentActive' : isSectionSelected(section)}" style="">
+						    <menu-link class="ng-scope ng-isolate-scope">
+						    	<a class="md-button md-ink-ripple active" ng-class="{'active' : isSelected()}" ng-href="/listUsers" ng-click="focusSection()" href="#/listUsers" style="">Lista de Usuários
+						    		<span class="md-visually-hidden ng-scope" ng-if="isSelected()" style="">current page</span>
+									<div class="md-ripple-container" style=""></div>
+								</a>
+							</menu-link>
+						</li>						
+					</ul>
+				</md-content>
+
+		    </md-sidenav>
+			
+			<div layout="column" tabIndex="-1" role="main" flex>
+
+				<md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar appNavContainer">
+
+					<div class="md-toolbar-tools docs-toolbar-tools" tabIndex="-1">
+
+						<md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-sm aria-label="Toggle Menu">
+						  <md-icon md-svg-icon="menu"></md-icon>
+						</md-button>
+
+						<h2 flex md-truncate>Área de administração</h2>
+
+						<md-menu md-position-mode="target-right target" >
+						  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+						    <md-icon md-menu-origin md-svg-icon="assets/img/svg/regular/user.svg"></md-icon>
+						  </md-button>
+						  <md-menu-content width="4" class="bordered" >
+						  	<md-menu-item  class="logedName">
+					          <div>
+					            <p flex>{{logedUser.name}}</p>
+					          </div>
+					        </md-menu-item>
+					        <md-menu-item class="logedEmail">
+					          <div>
+					            <p flex>{{logedUser.email}}</p>
+					          </div>
+					        </md-menu-item>
+					        <md-menu-item class="logedType">
+					          <div>
+					            <p flex>{{logedUser.type.name | uppercase}}</p>
+					          </div>
+					        </md-menu-item>
+					        <md-menu-item class="logedDivider">
+					          <md-divider></md-divider>
+					        </md-menu-item>
+					        <md-menu-item>
+							      <md-button ng-click="logout()">
+							          <div layout="row" flex>
+							            <p flex>Logout</p>
+							            <md-icon md-menu-align-target md-svg-icon="assets/img/svg/solid/sign-out-alt.svg" style="margin: auto 3px auto 0;"></md-icon>
+							          </div>
+							      </md-button>
+						    </md-menu-item>
+						  </md-menu-content>
+						</md-menu>
+
+					</div>
+
+				</md-toolbar>
+
+			    <md-content flex layout-padding>
+
+			      <div layout="column" layout-align="center center">
+					<div ng-view></div>
+			      </div>
+
+			    </md-content>
+
+			</div>
+
+		  </section>
+
+		</div>
