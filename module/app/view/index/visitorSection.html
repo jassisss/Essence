@@ -1,4 +1,4 @@
-		<div ng-controller="visitorUserCtrl" layout="column" ng-cloak>
+<div ng-controller="visitorUserCtrl" layout="column" ng-cloak>
 
 		  <md-toolbar class="bg-secondary">
 		  	  <div class="md-toolbar-tools">
@@ -13,32 +13,73 @@
 		  	    </md-button>
 		  	  </div>
 		  </md-toolbar>
+		  
+	<div layout="row" flex ng-cloak>
 
-		  <div class="jumbotron">
-			
-			<h3 style="color: #3E2E2E">ÁREA DO VISITANTE</h3>
+		<section layout="row" flex>
 
-		  	<ct-menus>
-		  		<ct-menu title="Menu 1">
-		  			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		  		</ct-menu>
+		    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-sm')">
 
-		  		<ct-menu title="Menu 2">
-		  			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		  		</ct-menu>
+		  		<header class="nav-header">
+		  		  <div class="docs-logo">
+		  		    <img src="assets/img/svg/app/Essence_Logo01.svg" alt="ESSENCE Logo" />
+		  		    <h1 class="docs-logotype md-heading">ESSENCE</h1>
+		  		  </div>
+		  		</header>
 
-		  		<ct-menu title="Menu 3">
-		  			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		  		</ct-menu>
-		  		
-		  		<ct-menu title="Menu 4">
-		  			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		  		</ct-menu>
+		  		<ul class="skip-links">
+		  		  <li class="md-whiteframe-z2">
+		  		    <md-button ng-click="focusMainContent($event)" href="#">Click no conteúdo</md-button>
+		  		  </li>
+		  		</ul>
 
-		  		<ct-menu title="Menu 5">
-		  			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		  		</ct-menu>
-		  	</ct-menus>
+		  		<md-content flex role="navigation">
+
+		  			<ul class="docs-menu">
+
+		  			  	<ct-menus>
+		  			  		<ct-menu title="Cadastros">
+		  				  		<ct-menu-content href="#/listUsers" item="Lista de Usuários"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  			  		</ct-menu>
+		  			  		<ct-menu title="Módulos">
+		  				  		<ct-menu-content href="#/listUsers" item="Lista de Usuários"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  			  		</ct-menu>
+		  			  		<ct-menu title="Configurações">
+		  				  		<ct-menu-content ref="#/listUsers" item="Lista de Usuários"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  				  		<ct-menu-content href="#/listUsers" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+		  			  		</ct-menu>
+		  			  	</ct-menus>
+
+		  			</ul>
+
+		  		</md-content> <!-- role="navigation" -->
+
+		    </md-sidenav> <!-- SideNav -->
+		
+		</section> <!-- layout="row" -->
+	
+		<div class="jumbotron">
+				
+				<h3 style="color: #3E2E2E">ÁREA DO VISITANTE</h3>
 
 
-		</div>
+			  	<div ng-view></div>
+
+
+		</div> <!-- jumbotron -->
+
+	</div> <!-- layout="row" -->
+
+</div> <!--  Div Controller -->
+

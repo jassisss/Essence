@@ -1,0 +1,8 @@
+<div flex="" layout="row" ng-click="open()" class="ct-menu-title ng-binding ng-scopeng-isolate-scope layout-row flex">
+  {{title | uppercase}}
+  <span flex="" class="flex"></span>
+  <span aria-hidden="true" class="md-toggle-icon toggled" ng-class="{'toggled' : isOpened}" style="">
+    <md-icon md-svg-icon="arrow" role="img" aria-label="arrow" style="color: white"></md-icon>
+  </span>
+</div>
+<ul class="ct-menu-content" ng-show="isOpened" ng-transclude></ul>
