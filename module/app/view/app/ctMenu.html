@@ -1,8 +1,14 @@
-<div flex="" layout="row" ng-click="open()" class="ct-menu-title ng-binding ng-scopeng-isolate-scope layout-row flex">
+<md-button class="ct-menu-title-button" layout="row">
+<div flex="" layout="row" ng-click="open()" class="ct-menu-title layout-row flex md-ink-ripple">
   {{title | uppercase}}
-  <span flex="" class="flex"></span>
-  <span aria-hidden="true" class="md-toggle-icon toggled" ng-class="{'toggled' : isOpened}" style="">
-    <md-icon md-svg-icon="arrow" role="img" aria-label="arrow" style="color: white"></md-icon>
-  </span>
+	<span flex="" class="flex"></span>
+	<span aria-hidden="true" class="ct-toggle-icon" ng-class="{'toggled' : isOpened}" style="">
+	<md-icon md-svg-icon="arrow" role="img" aria-label="arrow"></md-icon>
+	</span>
+	<span class="md-visually-hidden ng-binding ng-scope">
+	  Toggle expanded
+	</span>
+	<div class="md-ripple-container" style=""></div>
 </div>
-<ul class="ct-menu-content" ng-show="isOpened" ng-transclude></ul>
+</md-button>
+<ul id="ct-menu-content" class="ct-menu-content" ng-show="isOpened" ng-transclude></ul>

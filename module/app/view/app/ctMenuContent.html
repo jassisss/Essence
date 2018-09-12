@@ -1,8 +1,3 @@
-<li class="parentActive" ng-class="{'parentActive' : isSectionSelected(section)}" style="">
-    <menu-link class="ng-scope ng-isolate-scope">
-    	<a class="md-button md-ink-ripple active" ng-class="{'active' : isSelected()}" ng-click="focusSection()" href="{{href}}" style="">{{item}}
-    		<span class="md-visually-hidden ng-scope" ng-if="isSelected()" style="">current page</span>
-			<div class="md-ripple-container" style=""></div>
-		</a>
-	</menu-link>
+<li class="ct-menu-item layout-row flex" ng-class="{'parentActive' : isSectionSelected(section)}" style="">
+	<a class="ct-menu-link" href="{{href}}" style="">{{item}}</a>
 </li>

@@ -1,4 +1,4 @@
-var app = angular.module("essence",["ngMessages", "ngRoute", "ngMaterial"]);
+var app = angular.module("essence",["ngMessages", "ngRoute", "ngMaterial", "ngAnimate"]);
 
 	app.run(function($rootScope) {
 		// Select User

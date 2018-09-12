@@ -335,7 +335,7 @@ body[dir=rtl] .menu-heading {
 	transition: 		transform 0.3s ease-in-out;
 }
 
-.md-button-toggle .md-toggle-icon.toggled {
+.md-button-toggle .md-toggle-icon .toggled {
 	-webkit-transform-origin: rotate(0deg);
 	   -moz-transform-origin: rotate(0deg);
 		-ms-transform-origin: rotate(0deg);

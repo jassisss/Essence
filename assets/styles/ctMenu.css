@@ -1,0 +1,80 @@
+/************
+ * UTILS Menu Componete
+ ************/
+
+.ct-menu-title {
+	font-family: Roboto;
+	border: 1px solid #CCCCCC;
+	cursor: pointer;
+	background: -webkit-linear-gradient(top, #CCCCCC, #EEEEEE);
+	background:    -moz-linear-gradient(top, #CCCCCC, #EEEEEE);
+	background:     -ms-linear-gradient(top, #CCCCCC, #EEEEEE);
+	background:      -o-linear-gradient(top, #CCCCCC, #EEEEEE);
+	background:         linear-gradient(top, #CCCCCC, #EEEEEE);
+	padding: 0 10px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.ct-menu-title-button {
+	width: 100%;
+	padding: 0px;
+	padding-bottom: 10px;
+}
+
+.ct-menu-content {
+	font-family: inherit;
+	color : #6161DC;
+	background: transparent;
+	margin: 0px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+.ct-menu-item {
+	font-family: inherit;
+	list-style-type:none;
+	font-size: 16px;
+	text-align: left;
+	padding: 8px 0px;
+}
+
+a.ct-menu-link:link {
+	text-decoration: none;
+}
+
+.ct-toggle-icon.toggled {
+	display: block;
+	margin-left: auto;
+	speak: none;
+	vertical-align: middle;
+	-webkit-transform: rotate(180deg);
+	   -moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		 -o-transform: rotate(180deg);
+	      	transform: rotate(180deg);
+
+	transition: -webkit-transform 0.3s ease-in-out;
+	transition:    -moz-transform 0.3s ease-in-out;
+	transition: 	-ms-transform 0.3s ease-in-out;
+	transition: 	 -o-transform 0.3s ease-in-out;
+	transition: 		transform 0.3s ease-in-out;
+}
+
+.ct-toggle-icon {
+	-webkit-transform: rotate(0deg);
+	   -moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		 -o-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	transition: -webkit-transform 0.3s ease-in-out;
+	transition:    -moz-transform 0.3s ease-in-out;
+	transition: 	-ms-transform 0.3s ease-in-out;
+	transition: 	 -o-transform 0.3s ease-in-out;
+	transition: 		transform 0.3s ease-in-out;
+
+}
+
+
