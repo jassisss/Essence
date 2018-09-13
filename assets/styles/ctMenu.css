@@ -1,19 +1,18 @@
 /************
  * UTILS Menu Componete
  ************/
+.ct-content-color {
+	font-family: Roboto;
+	color: rgba(255,255,0,1);
+	background-color: rgba(120,115,115,1);
+}
 
 .ct-menu-title {
-	font-family: Roboto;
-	border: 1px solid #CCCCCC;
+	font-family: inherit;
 	cursor: pointer;
-	background: -webkit-linear-gradient(top, #CCCCCC, #EEEEEE);
-	background:    -moz-linear-gradient(top, #CCCCCC, #EEEEEE);
-	background:     -ms-linear-gradient(top, #CCCCCC, #EEEEEE);
-	background:      -o-linear-gradient(top, #CCCCCC, #EEEEEE);
-	background:         linear-gradient(top, #CCCCCC, #EEEEEE);
 	padding: 0 10px;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 500;
 	text-align: left;
 }
 
@@ -23,10 +22,38 @@
 	padding-bottom: 10px;
 }
 
+.ct-menu-title-header {
+	font-family: inherit;
+	width: 100%;
+	padding: 5px 5px;
+	font-size: 18px;
+	font-weight: normal;
+	background-color: rgba(120,115,115,.2);
+	opacity: 0.7;
+}
+
+.ct-menu-header-content {
+	font-family: inherit;
+	background: transparent;
+	margin: 0px;
+	overflow: hidden;
+	position: relative;
+	padding: 0px;
+	z-index: 1;
+}
+
+.ct-animate-slide.ng-hide {
+	opacity: 0;
+}
+
+.ct-animate-slide.ng-hide-add,
+.ct-animate-slide.ng-hide-remove {
+	transition: all linear 0.7s;
+}
+
 .ct-menu-content {
 	font-family: inherit;
-	color : #6161DC;
-	background: transparent;
+	background-color: 
 	margin: 0px;
 	overflow: hidden;
 	position: relative;
@@ -41,8 +68,45 @@
 	padding: 8px 0px;
 }
 
+.ct-icon {
+	color: inherit;
+	font-style: inherit;
+	font-weight: normal;
+}
+
+.ct-menu-item:hover {
+	background-color: rgba(120,115,115,.3);
+}
+
+a.ct-menu-link {
+	text-decoration: none;
+	color: inherit;
+}
+
 a.ct-menu-link:link {
 	text-decoration: none;
+}
+
+a.ct-menu-link:hover {
+	background-color: rgba(120,115,115,.3);
+}
+
+a.ct-md-button {
+  display: block;
+  padding: 0 16px 0 32px;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+}
+
+.ct-md-button md-icon {
+  color: #666 !important;
+  fill: #666 !important;
+}
+
+.ct-md-button {
+  transition: all 0.3s linear;
+  color: #616161;
 }
 
 .ct-toggle-icon.toggled {

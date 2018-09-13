@@ -63,4 +63,17 @@
             };
     });
 
+    app.directive("ctMenuHeader", 
+
+        function () {
+            return {
+                templateUrl: '../module/app/view/app/ctMenuheader.html',
+                transclude: true,
+                rstrict: 'E',
+                scope: {
+                    title: "@",
+                }
+            };
+    });
+
 })();
