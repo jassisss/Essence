@@ -1,58 +1,119 @@
-<div ng-controller="visitorUserCtrl" layout="column" ng-cloak>
-	
-	<md-toolbar class="bg-secondary">
-		  <div class="md-toolbar-tools">
-		    <md-button class="md-icon-button" aria-label="Settings">
-		      <md-icon md-svg-icon="logo2"></md-icon>
-		    </md-button>
+<div ng-controller="visitorUserCtrl" class="layout-row docs-body" layout="row" flex ng-cloak>
 
-		    <h2 flex md-truncate>ESSENCE</h2>
+	<section layout="row" flex>
 
-		    <md-button aria-label="Login" ng-click="logout()">
-		      <span>Logout&nbsp;<md-icon md-svg-icon="assets/img/svg/solid/sign-out-alt.svg" class="s12"></md-icon></span>
-		    </md-button>
-		  </div>
-	</md-toolbar>
-	
-	</div>	
-		<div class="jumbotron ct-content-color" >
+	    <md-sidenav class="site-sidenav md-sidenav-left" layout="column" flex md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-sm')">
 
-				<h3>ÁREA DO VISITANTE</h3>
+			<header class="nav-header">
+			  <div class="docs-logo">
+			    <img src="assets/img/svg/app/Essence_Logo01.svg" alt="ESSENCE Logo" />
+			    <h1 class="docs-logotype md-heading">ESSENCE</h1>
+			  </div>
+			</header>
 
-			  	<ct-menus>
-			  		<ct-menu-header title="Definições de Usuários">
-				  		<ct-menu title="Cadastros">
-					  		<ct-menu-content href="#" item="Lista de Usuários"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-				  		</ct-menu>
-				  		<ct-menu title="Módulos">
-					  		<ct-menu-content href="#" item="Lista de Usuários"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-				  		</ct-menu>
-			  		</ct-menu-header>
-			  		<ct-menu-header title="Definições do Aplicativo">
-				  		<ct-menu title="Configurações">
-					  		<ct-menu-content href="#" item="Lista de Usuários"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-					  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
-				  		</ct-menu>
-			  		</ct-menu-header>
-			  	</ct-menus>				
+			<ul class="skip-links">
+			  <li class="md-whiteframe-z2">
+			    <md-button ng-click="focusMainContent($event)" href="#">Click no conteúdo</md-button>
+			  </li>
+			</ul>
 
+			<md-content flex role="navigation">
+				<ul class="docs-menu">
+					  	<ct-menus>
+					  		<ct-menu-header title="Definições de Usuários">
+						  		<ct-menu title="Cadastros">
+							  		<ct-menu-content href="#/listUsers" item="Lista de Usuários"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+						  		</ct-menu>
+						  		<ct-menu-link titlelink="Lista de Usuário" hreflink="#/listUsers"></ct-menu-link>
+						  		<ct-menu title="Módulos">
+							  		<ct-menu-content href="#" item="Lista de Usuários"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+						  		</ct-menu>
+					  		</ct-menu-header>
+					  		<ct-menu-header title="Definições do Aplicativo">
+						  		<ct-menu title="Configurações" ct-drop-down>
+							  		<ct-menu-content href="#" item="Lista de Usuários"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+							  		<ct-menu-content href="#" icon="fa fa-user" item="Item do menu"></ct-menu-content>
+						  		</ct-menu>
+					  		</ct-menu-header>
+					  	</ct-menus>								
+				</ul>
+			</md-content>
 
+	    </md-sidenav>
 
-			  	<div ng-view></div>
+		<div layout="column" tabIndex="-1" role="main" flex>
 
+			<md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar appNavContainer">
 
-		</div> <!-- jumbotron -->
+				<div class="md-toolbar-tools docs-toolbar-tools" tabIndex="-1">
+
+					<md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-sm aria-label="Toggle Menu">
+					  <md-icon md-svg-icon="menu"></md-icon>
+					</md-button>
+
+					<h2 flex md-truncate>Área do Visitante</h2>
+
+					<md-menu md-position-mode="target-right target" >
+					  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+					  	<i class="fa fa-user fa-2x fa-cor"></i>
+					    <!-- <md-icon  md-menu-align-target md-svg-icon="assets/img/svg/regular/user.svg" style="height: 24px; height: 24px; color: white;"></md-icon> -->
+					  </md-button>
+					  <md-menu-content width="4" class="bordered-dark" >
+					  	<md-menu-item  class="ct-logedName">
+				          <div>
+				            <p flex>{{logedUser.name}}</p>
+				          </div>
+				        </md-menu-item>
+				        <md-menu-item class="ct-logedItens">
+				          <div>
+				            <p flex>{{logedUser.email}}</p>
+				          </div>
+				        </md-menu-item>
+				        <md-menu-item class="ct-logedItens">
+				          <div>
+				            <p flex>{{logedUser.type.name | uppercase}}</p>
+				          </div>
+				        </md-menu-item>
+				        <md-menu-item">
+				          <md-divider class="ct-logedDivider"></md-divider>
+				        </md-menu-item>
+				        <md-menu-item>
+						      <md-button ng-click="logout()">
+						          <div layout="row" flex>
+						            <p flex class="ct-logedLogout">Logout</p>
+						            <md-icon md-menu-align-target md-svg-icon="assets/img/svg/solid/sign-out-alt.svg" class="ct-logedIcon"></md-icon>
+						          </div>
+						      </md-button>
+					    </md-menu-item>
+					  </md-menu-content>
+					</md-menu>
+
+				</div>
+
+			</md-toolbar>
+
+		    <md-content class="ct-content-heigth" flex layout-padding>
+
+		      <div layout="column" flex layout-align="center center">
+				<div ng-view></div>
+		      </div>
+
+		    </md-content>
+
+		</div>	<!-- layout="column" -->
+
+	</section> <!-- layout="row" -->
 
 </div> <!--  Div Controller -->
 

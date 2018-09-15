@@ -2,16 +2,10 @@
 
 	'use strict';
 
-	app.config(['$mdThemingProvider', function($mdThemingProvider) {
+	app.config(function($mdThemingProvider) {
+		  $mdThemingProvider.theme('default')
+		    .dark();
+    	});
 
-    // Configure a dark theme with primary foreground grey
-
-    $mdThemingProvider.theme('docs-dark', 'default')
-      .primaryPalette('grey')
-      .accentPalette('grey')
-      .dark();
-
-
-    }]);
 
 })()

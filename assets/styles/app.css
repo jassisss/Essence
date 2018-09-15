@@ -15,9 +15,8 @@
 }
 
 .bordered {
-    border-bottom-color: rgb(212, 212, 212);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-color: rgb(212, 212, 212);
+    border-radius: 5px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-image-outset: 0px;
@@ -25,17 +24,20 @@
     border-image-slice: 100%;
     border-image-source: none;
     border-image-width: 1;
-    border-left-color: rgb(212, 212, 212);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: rgb(212, 212, 212);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-color: rgb(212, 212, 212);
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-top-style: solid;
-    border-top-width: 1px;
+}
+
+.bordered-dark {
+    border-color: white;
+    border-radius: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    color: white;
+    background-color: #777;
 }
 
 .row-app {
@@ -62,12 +64,12 @@
 .footer {
 	text-align: center;
 	font-size: 11px;
-	color: #A2A2A2;
+	color: #fff;
 }
 
 .footer-color {
 	font-size: 11px;
-	color: #222222;
+	color: #000;
 }
 
 .forgot {
@@ -97,13 +99,28 @@
 	list-style-type: none
 }
 
+.fa-cor {
+  color: white;
+}
+
+.fa-cor:hover {
+  color: #333;
+}
+
 .appNavContainer {
-	border: 1px solid #D6D6D7;
-	background: -webkit-linear-gradient(top, #E3E3E4, #B2B9FA);
-	background:    -moz-linear-gradient(top, #E3E3E4, #B2B9FA);
-	background:     -ms-linear-gradient(top, #E3E3E4, #B2B9FA);
-	background:      -o-linear-gradient(top, #E3E3E4, #B2B9FA);
-	background:         linear-gradient(top, #E3E3E4, #B2B9FA);
+  background-color: #787373;
+  background: -webkit-linear-gradient(top, #C2C2C2, #787373);
+  background:    -moz-linear-gradient(top, #C2C2C2, #787373);
+  background:     -ms-linear-gradient(top, #C2C2C2, #787373);
+  background:      -o-linear-gradient(top, #C2C2C2, #787373);
+  background:         linear-gradient(top, #C2C2C2, #787373);
+  border-bottom: 1px solid #787373;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.section-height {
+  height: 1000px;
 }
 
 /*Subscribe Bootstrap Styles*/
@@ -131,9 +148,17 @@
 }
 
 .breadcrumb {
-	margin : 0px;
-	padding: 0px;
-	background-color: transparent;
+  margin : 0px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+.breadcrumb-item > a {
+  color: #eee;
+}
+
+.breadcrumb-item.active {
+  color: #333;
 }
 
 .form-control {

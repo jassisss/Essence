@@ -49,6 +49,27 @@
     });
 
 
+    app.directive("ctMenuLink", ['$location',  
+
+        function ($location) {
+            return {
+                templateUrl: '../module/app/view/app/ctMenuLink.html',
+                replace: false,
+                rstrict: 'E',
+                scope: {
+                    titlelink: "@",
+                    hreflink: "@"
+                },
+                link: function (scope, element, attrs) {
+                    scope.goTo = function (link) {
+                        console.log(link);
+                        $location.path(link); 
+                    };
+                }
+            };
+        }]
+    );
+
     app.directive("ctMenuContent", 
 
         function () {
