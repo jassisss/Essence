@@ -1,32 +1,40 @@
 (function() {
     'use strict';
 
-	app.controller('adminUserCtrl', [ '$scope', '$mdSidenav', '$location', 
+	app.controller('adminUserCtrl', adminUserCtrl); 
 
-    function ($scope, $mdSidenav, $location) {
+    function adminUserCtrl($scope, $mdSidenav, $location, adminUserSideMenu) {
 	  // *********************************
 	  // Internal methods
 	  // *********************************
 	  // 
 	  
-	  $scope.logout = function() {
-	  	$scope.changeShowLogin(true);
-	  	$scope.changeShowAdmin(false);
-	  	$scope.changeShowVisitor(false);
-	    $location.path("/");
-	  }
+		$scope.logout = function() {
+			$scope.changeShowLogin(true);
+			$scope.changeShowAdmin(false);
+			$scope.changeShowVisitor(false);
+			$location.path("/");
+		};
 
-	  /**
-	   * Hide or Show the 'left' sideNav area
-	   */
-	   $scope.toggleLeft = buildToggler('left');
 
-	   function buildToggler(componentId) {
-	     return function() {
-	       $mdSidenav(componentId).toggle();
-	     };
-	   }
+		var menus = adminUserSideMenu.adminSideMenu();
 
-	}]);
+		document.getElementById("adminMenu").innerHTML = menus;
+
+		/**
+		* Hide or Show the 'left' sideNav area
+		*/
+		$scope.toggleLeft = buildToggler('left');
+
+		function buildToggler(componentId) {
+			return function() {
+				$mdSidenav(componentId).toggle();
+			};
+		}
+
+	};
+	
+	adminUserCtrl.$inject = [ '$scope', '$mdSidenav', '$location', 'adminUserSideMenu'];
+
 
 })();

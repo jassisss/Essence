@@ -1,31 +1,35 @@
 (function() {
     'use strict';
 
-	app.controller('listUsersCtrl', function($scope, $location, users) {
+	app.controller('listUsersCtrl', listUsersCtrl);
 
-		$scope.listUsersNameCtrl = "Lista de Usuários";
+		function listUsersCtrl($scope, $location, users) {
 
-		$scope.users = users.data;
+			$scope.listUsersNameCtrl = "Lista de Usuários";
 
-		$scope.mostra = false;
+			$scope.users = users.data;
 
-		$scope.startAdmin = function () {
-			$scope.changeShowLogin(false);
-			$scope.changeShowAdmin(true);
-			$scope.changeShowVisitor(false);
-			$location.path("/");
-		};
-
-		$scope.reloadUser = function() {
 			$scope.mostra = false;
-			$location.path("/reloadListUsers");
+
+			$scope.startAdmin = function () {
+				$scope.changeShowLogin(false);
+				$scope.changeShowAdmin(true);
+				$scope.changeShowVisitor(false);
+				$location.path("/");
+			};
+
+			$scope.reloadUser = function() {
+				$scope.mostra = false;
+				$location.path("/reloadListUsers");
+			};
+
+			$scope.pegar = function(data) {
+		        $scope.mostra = true;
+		        $scope.changeIdUserSelected(data.idUser);
+		    }
+
 		};
 
-		$scope.pegar = function(data) {
-	        $scope.mostra = true;
-	        $scope.changeIdUserSelected(data.idUser);
-	    }
-
-	});
+		listUsersCtrl.$inject = ['$scope', '$location', 'users'];
 
 })();

@@ -1,4 +1,4 @@
-<div ng-controller="adminUserCtrl" layout="row" flex ng-cloak>
+<div ng-controller="adminUserCtrl" layout="row" flex>
 
   <section layout="row" flex>
 
@@ -18,15 +18,7 @@
 		</ul>
 
 		<md-content flex role="navigation">
-			<ul class="docs-menu">
-				<li class="parent-list-item  parentActive" ng-class="{'parentActive' : isSectionSelected(section)}" style="">
-				    <menu-link class="ng-scope ng-isolate-scope">
-				    	<a class="md-button md-ink-ripple active" ng-class="{'active' : isSelected()}" ng-href="/listUsers" ng-click="focusSection()" href="#/listUsers" style="">Lista de Usuários
-				    		<span class="md-visually-hidden ng-scope" ng-if="isSelected()" style="">current page</span>
-							<div class="md-ripple-container" style=""></div>
-						</a>
-					</menu-link>
-				</li>						
+			<ul id="adminMenu" class="docs-menu">
 			</ul>
 		</md-content>
 
