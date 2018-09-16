@@ -9,8 +9,8 @@
 			var _menuHtml = '';
 			
 			var _adminMenus = [
-			   {'headers': 'Usuários'}, 
-			   {'headers': 'Aplicativos'} 
+			   { header: 'Definições de Usuários'}, 
+			   { header: 'Aplicativos'} 
 			];
 
 			var _makeMenu = function () {
