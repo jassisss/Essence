@@ -1,3 +1,6 @@
-lib/
-!lib/cgctec/ 
+lib/angular*
+lib/Font*
+lib/jquery*
+lib/bootstrap
+lib/pop*
 scratch/

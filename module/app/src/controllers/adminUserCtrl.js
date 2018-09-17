@@ -9,7 +9,7 @@
 	  // *********************************
 	  // 
 		$scope.adminMenus = [
-			{header: [name: 'Usuários',
+			{header: 'Usuários',
 			 menus:[{name: 'Cadastros', 
 			        items: [{name: 'Lista de Usuários', href: '#/listUsers'},
 			        		{name: 'Lista de Convidados', href: '#'}
@@ -20,9 +20,9 @@
 			      		     {name: 'Módulo de Visitantes', href: '#'}
 			      		    ]
 			      	}
-			 ],
-			]}, 
-			{header: [name: 'Aplicativos', 
+			      ],
+			}, 
+			{header: 'Aplicativos', 
 			 menus:[{name: 'Configurações', 
 			        items: [{name: 'Menus', href: '#'},
 			        		{name: 'Temas', href: '#'}
@@ -33,9 +33,9 @@
 			      		     {name: 'Módulo de Visitantes', href: '#'}
 			      		    ]
 			      	}
-			 ],
-			]},
-			{header: [name : 'Ajuda', 
+			      ],
+			},
+			{header: 'Ajuda', 
 			 menus:[{name: 'Documentação', 
 			        items: [{name: 'Para Desenvolvedores', href: '#'},
 			        		{name: 'Para Usuários', href: '#'}
@@ -49,8 +49,8 @@
 			      ],
 			 menulink: [ 
 				{name: 'Versão', link: '#'}
-				],
-			]}		
+			     ]
+			}		
 		];
 	  
 		$scope.logout = function() {
