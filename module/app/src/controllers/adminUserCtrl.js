@@ -9,37 +9,48 @@
 	  // *********************************
 	  // 
 		$scope.adminMenus = [
-			{header: 'Usuários',
+			{header: [name: 'Usuários',
 			 menus:[{name: 'Cadastros', 
 			        items: [{name: 'Lista de Usuários', href: '#/listUsers'},
-			        		{name: 'Lista de Visitantes', href: '#'}
+			        		{name: 'Lista de Convidados', href: '#'}
 			               ]
 			      	},
 			      	{name: 'Módulos', 
-			      	 items: [{name: 'Módulo de Usuários', href: '#'},
+			      	 items: [{name: 'Tipos de Usuários', href: '#'},
 			      		     {name: 'Módulo de Visitantes', href: '#'}
 			      		    ]
 			      	}
-			      ],
-			 menulink: [ 
-			     {name: 'Sobre', link: '#'}
-
+			 ],
 			]}, 
-			{header: 'Aplicativos', 
+			{header: [name: 'Aplicativos', 
 			 menus:[{name: 'Configurações', 
 			        items: [{name: 'Menus', href: '#'},
 			        		{name: 'Temas', href: '#'}
 			               ]
 			      	},
-			      	{name: 'Módulos', 
-			      	 items: [{name: 'Módulo de Usuários', href: '#'},
+			      	{name: 'Preferências', 
+			      	 items: [{name: 'Alteração do perfil', href: '#'},
 			      		     {name: 'Módulo de Visitantes', href: '#'}
+			      		    ]
+			      	}
+			 ],
+			]},
+			{header: [name : 'Ajuda', 
+			 menus:[{name: 'Documentação', 
+			        items: [{name: 'Para Desenvolvedores', href: '#'},
+			        		{name: 'Para Usuários', href: '#'}
+			               ]
+			      	},
+			      	{name: 'Sobre', 
+			      	 items: [{name: 'Estrutura', href: '#'},
+			      		     {name: 'Créditos', href: '#'}
 			      		    ]
 			      	}
 			      ],
 			 menulink: [ 
 				{name: 'Versão', link: '#'}
-			]}
+				],
+			]}		
 		];
 	  
 		$scope.logout = function() {

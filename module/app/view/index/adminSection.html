@@ -20,7 +20,7 @@
 		<md-content flex role="navigation">
 			<ul id="adminMenu" class="docs-menu">
 				<ct-menus>
-						<ct-menu-header ng-repeat="header in adminMenus" title="{{header.header}}">
+						<ct-menu-header ng-repeat="header in adminMenus" title="{{header.name}}">
 							<ct-menu ng-repeat="menu in header.menus" title="{{menu.name}}">
 								<ct-menu-content ng-repeat="item in menu.items" href="{{item.href}}" item="{{item.name}}"></ct-menu-content>
 							</ct-menu>
