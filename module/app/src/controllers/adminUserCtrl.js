@@ -3,7 +3,7 @@
 
 	app.controller('adminUserCtrl', adminUserCtrl); 
 
-    function adminUserCtrl($scope, $mdSidenav, $location, adminUserSideMenu) {
+    function adminUserCtrl($scope, $mdSidenav, $location) {
 	  // *********************************
 	  // Internal methods
 	  // *********************************
@@ -68,7 +68,7 @@
 
 	};
 	
-	adminUserCtrl.$inject = [ '$scope', '$mdSidenav', '$location', 'adminUserSideMenu'];
+	adminUserCtrl.$inject = [ '$scope', '$mdSidenav', '$location' ];
 
 
 })();
