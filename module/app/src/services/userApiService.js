@@ -19,12 +19,12 @@
 			return $http.get(config.baseUrl + "/users/delete/" + id);		
 		};
 
-		var _saveUser = function(user) {
-			return $http.post(config.baseUrl + "/users", user);		
+		var _addUser = function(user) {
+			return $http.post(config.baseUrl + "/users/add", user);		
 		};
 
 		var _updateUser = function(id, user) {
-			return $http.post(config.baseUrl + "/users/add/" + id, user);		
+			return $http.post(config.baseUrl + "/users/update/" + id, user);		
 		};
 
 		var _getTypes = function() {
@@ -35,7 +35,7 @@
 			loginUser: _loginUser,
 			getUsers: _getUsers,
 			getUser: _getUser,
-			saveUser: _saveUser,
+			addUser: _addUser,
 			deleteUser: _deleteUser,
 			updateUser: _updateUser,
 			getTypes: _getTypes,

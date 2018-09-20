@@ -18,13 +18,14 @@
 		};
 
 		$scope.validateUser = function (login) {
+			console.log(login);
 			usersApi.loginUser(login).then(function onSuccess(response) {
 				$scope.changeLogedUser(response.data);
 				delete $scope.login;
 				$mdDialog.cancel();
 				$scope.userNotExit = false;
 				$scope.loginForm.$setPristine();
-				if (response.data.type.name === 'Administrador') {
+				if (response.data.type === 1) {
 					$scope.changeShowLogin(false);
 					$scope.changeShowAdmin(true);
 					$scope.changeShowVisitor(false);

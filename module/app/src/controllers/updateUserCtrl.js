@@ -19,10 +19,9 @@
 		var userIdUpdate = $scope.idUserSelected;
 
 		$scope.updateUser = function (user) {
-			user.idUser = $scope.user.idUser;
 			user.creationDate= $scope.user.creationDate;
 			user.modifyDate= new Date();
-			usersApi.updateUser($scope.idUserSelected, user).then(function onSuccess(response) {
+			usersApi.updateUser(user.id, user).then(function onSuccess(response) {
 				$scope.updateUserForm.$setPristine();
 				$location.path("/listUsers");
 			});

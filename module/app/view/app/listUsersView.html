@@ -22,10 +22,10 @@
 		  <tbody>
 		    <tr ng-repeat="user in users">
 		      <td><input type="radio" name="sel" value="{{user}}" ng-model="data.name" ng-change="pegar(user)"></td>
-		      <td show-gt-sm hide>{{user.idUser}}</td>
+		      <td show-gt-sm hide>{{user.id}}</td>
 		      <td show-gt-sm hide>{{user.name}}</td>
 		      <td>{{user.email}}</td>
-		      <td show-gt-sm hide>{{user.type.name}}</td>
+		      <td show-gt-sm hide>{{user.type_id}}</td>
 		      <td show-gt-sm hide>{{user.modifyDate | date:"dd/MM/yyyy hh:mm"}}</td>
 		    </tr>
 		   </tbody>

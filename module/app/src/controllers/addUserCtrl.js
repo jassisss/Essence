@@ -30,10 +30,9 @@
 		};
 
 		$scope.addUser = function (user) {
-			user.idUser = idGenerator.generate($scope.users);
 			user.creationDate= new Date();
 			user.modifyDate= new Date();
-			usersApi.saveUser(user).then(function onSuccess(response) {
+			usersApi.addUser(user).then(function onSuccess(response) {
 				delete $scope.user;
 				$scope.addUserForm.$setPristine();
 				$location.path("/listUsers");
