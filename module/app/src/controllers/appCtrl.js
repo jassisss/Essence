@@ -1,12 +1,14 @@
 (function() {
 	'use strict';
 
-	app.controller('appCtrl', ['$scope',
+	app.controller('appCtrl', appCtrl);
 
-		function ($scope) {
+		function appCtrl($scope) {
 
 			$scope.ano = new Date();
 
-		}])
+		};
+
+		appCtrl.$inject = ['$scope'];
 
 })()

@@ -1,15 +1,20 @@
 (function() {
     'use strict';
 
-	angular.module("essence").controller('forgotCtrl', function ($scope) {
+	app.controller('forgotCtrl', forgotCtrl);
 
-		$scope.forgotNomeCtrl = "Recuperação de senha";
+		function forgotCtrl($scope) {
 
-		$scope.resetForgotForm = function (email) {
-			delete $scope.forgot;
-			$scope.forgotForm.$setPristine();
+			$scope.forgotNomeCtrl = "Recuperação de senha";
+
+			$scope.resetForgotForm = function (email) {
+				delete $scope.forgot;
+				$scope.forgotForm.$setPristine();
+
+			};
 
 		};
-	});
+
+		forgotCtrl.$inject = ['$scope'];
 
 })();

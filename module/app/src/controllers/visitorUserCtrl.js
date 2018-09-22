@@ -1,45 +1,38 @@
 (function() {
     'use strict';
 
-	app.controller('visitorUserCtrl', [ '$scope', '$mdSidenav', '$location', 
+	app.controller('visitorUserCtrl', visitorUserCtrl) 
 
-	function ($scope, $mdSidenav, $location) {
-	  // *********************************
-	  // Internal methods
-	  // *********************************
-	  
-	  $scope.logout = function() {
-	  	$scope.changeShowLogin(true);
-	  	$scope.changeShowAdmin(false);
-	  	$scope.changeShowVisitor(false);
-	  }
+	function visitorUserCtrl($scope, $mdSidenav, $location) {
+		// *********************************
+		// Internal methods
+		// *********************************
 
-	  /**
-	   * Hide or Show the 'left' sideNav area
-	   */
-	  
-	  $scope.toggleLeft = buildToggler('left');
+		$scope.logout = function() {
+			$scope.changeShowLogin(true);
+			$scope.changeShowAdmin(false);
+			$scope.changeShowVisitor(false);
+		}
 
-      function buildToggler(componentId) {
-	      return function() {
-	        $mdSidenav(componentId).toggle();
-      	}
-      };
+		/**
+		* Hide or Show the 'left' sideNav area
+		*/
 
-      function toggleUsersList() {
-	    $mdSidenav('left').toggle();
-	  };
+		$scope.toggleLeft = buildToggler('left');
 
-	  // /**
-	  //  * Select the current avatars
-	  //  * @param menuId
-	  //  */
-	  // function selectUser ( user ) {
-	  //   self.selected = angular.isNumber(user) ? $scope.users[user] : user;
-	  // };		
+		function buildToggler(componentId) {
+		  return function() {
+		    $mdSidenav(componentId).toggle();
+			}
+		};
 
+		function toggleUsersList() {
+		$mdSidenav('left').toggle();
+		};
 
-	}]);
+	};
+
+	visitorUserCtrl.$inject = ['$scope', '$mdSidenav', '$location'];
 
 })();
 

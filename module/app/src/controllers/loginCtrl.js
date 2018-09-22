@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-	app.controller('loginCtrl', [ '$scope', '$location', 'usersApi', '$mdDialog',
+	app.controller('loginCtrl', loginCtrl);
 
-	function ($scope, $location, usersApi, $mdDialog) {
+	function loginCtrl($scope, $location, usersApi, $mdDialog) {
 
 		$scope.loginNomeCtrl = "Formulário de Entrada";
 
@@ -18,14 +18,13 @@
 		};
 
 		$scope.validateUser = function (login) {
-			console.log(login);
 			usersApi.loginUser(login).then(function onSuccess(response) {
 				$scope.changeLogedUser(response.data);
 				delete $scope.login;
 				$mdDialog.cancel();
 				$scope.userNotExit = false;
 				$scope.loginForm.$setPristine();
-				if (response.data.type === 1) {
+				if (response.data.type_id === 1) {
 					$scope.changeShowLogin(false);
 					$scope.changeShowAdmin(true);
 					$scope.changeShowVisitor(false);
@@ -125,7 +124,9 @@
 		}		
 
 
-	}]);
+	};
+
+	loginCtrl.$inject =  [ '$scope', '$location', 'usersApi', '$mdDialog'];
 
 })();
 

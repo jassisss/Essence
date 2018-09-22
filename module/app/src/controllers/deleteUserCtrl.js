@@ -1,28 +1,39 @@
 (function() {
     'use strict';
 
-	app.controller('deleteUserCtrl', function($scope, $location, usersApi) {
+	app.controller('deleteUserCtrl', deleteUserCtrl);
 
-		$scope.listUsersNameCtrl = "Lista de Usuários";
-		$scope.deleteUsersNameCtrl = "Excluir Usuário";
+		function deleteUserCtrl($scope, $location, usersApi, users, types) {
 
+			$scope.listUsersNameCtrl = "Lista de Usuários";
+			$scope.deleteUsersNameCtrl = "Excluir Usuário";
 
-		$scope.user = [];
+			$scope.users = users.data;
+			$scope.types = types.data;
 
-		var loadUser = function () {
-			usersApi.getUser($scope.idUserSelected).then(function onSuccess(response) {
-				$scope.user = response.data;
+			$scope.user = [];
+
+			$scope.users.forEach( function(user) {
+				if (user.id == $scope.idUserSelected) {
+					$scope.types.forEach( function(type) {
+						if (user.type_id === type.id){
+							user.typeName = type.name;
+							$scope.user.name = user.name;
+							$scope.user.email = user.email;
+							$scope.user.typeName = type.name;
+						};
+					});
+				};
 			});
+
+			$scope.deleteUser = function () {
+				usersApi.deleteUser($scope.idUserSelected).then(function onSuccess(response) {
+					$location.path("/listUsers");
+				});
+			};
+
 		};
 
-		$scope.deleteUser = function () {
-			usersApi.deleteUser($scope.idUserSelected).then(function onSuccess(response) {
-				$location.path("/listUsers");
-			});
-		};
-
-		loadUser();
-
-	});
+		deleteUserCtrl.$inject = ['$scope', '$location', 'usersApi', 'users', 'types'];
 
 })();

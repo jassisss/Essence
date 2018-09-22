@@ -39,6 +39,9 @@
 			resolve: {
 				users: function(usersApi) {
 					return usersApi.getUsers();
+				},
+				types: function(usersApi) {
+					return usersApi.getTypes();
 				}
 			}
 		});
@@ -70,6 +73,14 @@
 		$routeProvider.when("/deleteUser", {
 			templateUrl: "../../module/app/view/app/deleteUserView.html",
 			controller: "deleteUserCtrl",
+			resolve: {
+				users: function(usersApi) {
+					return usersApi.getUsers();
+				},
+				types: function(usersApi) {
+					return usersApi.getTypes();
+				}
+			}
 		});
 
 		$routeProvider.when("/updateUser/:id", {
@@ -78,9 +89,6 @@
 			resolve: {
 				user: function(usersApi, $route) {
 					return usersApi.getUser($route.current.params.id);
-				},
-				users: function(usersApi) {
-					return usersApi.getUsers();
 				},
 				types: function(usersApi) {
 					return usersApi.getTypes();

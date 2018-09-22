@@ -60,12 +60,6 @@
 			$location.path("/");
 		};
 
-
-		// var menus = adminUserSideMenu.adminSideMenu();
-		// var mmm = '<ct-menus><ct-menu-header title="Definições de Usuários"></ct-menu-header></ct-menus>';
-
-		// document.getElementById("adminMenu").innerHTML = mmm;
-
 		/**
 		* Hide or Show the 'left' sideNav area
 		*/

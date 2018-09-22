@@ -1,7 +1,9 @@
 (function() {
     'use strict';
 
-	app.controller('addUserCtrl', function($scope, $location, idGenerator, users, types, usersApi) {
+	app.controller('addUserCtrl', addUserCtrl);
+
+		function addUserCtrl($scope, $location, formatDate, users, types, usersApi) {
 
 		$scope.listUsersNameCtrl = "Lista de Usuários";
 		$scope.addUsersNameCtrl = "Adicionar Usuário";
@@ -30,8 +32,8 @@
 		};
 
 		$scope.addUser = function (user) {
-			user.creationDate= new Date();
-			user.modifyDate= new Date();
+			user.creationDate = formatDate.generate(new Date());
+			user.modifyDate = formatDate.generate(new Date());
 			usersApi.addUser(user).then(function onSuccess(response) {
 				delete $scope.user;
 				$scope.addUserForm.$setPristine();
@@ -46,6 +48,8 @@
 			});
 		};
 
-	});
+	};
+
+	addUserCtrl.$inject = ['$scope', '$location', 'formatDate', 'users', 'types', 'usersApi'];
 
 })();

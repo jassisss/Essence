@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container flex">
 	
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
@@ -9,7 +9,7 @@
 	</nav>
 
 
-	<div class="jumbotron  bordered">
+	<div class="jumbotron  bordered flex">
 		<h3 class="app-title" style="text-align: center;">{{updateUsersNameCtrl}}</h3>
 		<hr>
 		<form name="updateUserForm">
@@ -24,12 +24,11 @@
 				<p ng-message="email">O e-mail é inválido!</p>
 			</div>
 
-			<select ng-model="user.type" ng-options="type.name for type in types track by type.name" name="type.name" class="form-control">
+			<select ng-model="user.type_id" ng-options="type.id as type.name for type in types" name="typeRegister" class="form-control" ng-required="true">
 				<option value="">Selecione um tipo</option>
 			</select>
 			<div class="forgot" ng-messages="updateUserForm.typeRegister.$error" ng-if="updateUserForm.typeRegister.$dirty">
-				<p ng-message="required">E-mail é um campo obrigatório!</p>
-				<p ng-message="email">O e-mail é inválido!</p>
+				<p ng-message="required">Tipo é um campo obrigatório!</p>
 			</div>
 		</form>
 
